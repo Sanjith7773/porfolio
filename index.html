@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YOUR NAME | ECE Student Portfolio</title>
+  <meta name="description" content="Portfolio of an Electronics and Communication Engineering student: embedded systems, electronics, IoT and programming projects.">
+  <meta name="theme-color" content="#06110D">
+
+  <!-- Pixel fonts (optional). If offline, the page falls back to Courier New / monospace. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <noscript><style>#boot{display:none}</style></noscript>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ BOOT SEQUENCE (optional, skippable) ============ -->
+  <div id="boot" class="boot" role="dialog" aria-modal="true" aria-label="Boot sequence">
+    <div class="boot__inner">
+      <div id="boot-log" class="boot__log" aria-hidden="true"></div>
+      <div class="boot__meter" aria-hidden="true"><span id="boot-bar"></span></div>
+      <button type="button" id="boot-skip" class="btn btn--small">[ SKIP BOOT (ESC) ]</button>
+    </div>
+  </div>
+
+  <!-- ============ HEADER: title bar + menu bar ============ -->
+  <header class="sys-header">
+    <div class="titlebar">
+      <a class="logo" href="#home" aria-label="Home">
+        <span class="logo__mark" aria-hidden="true">[&gt;_]</span>
+        <span class="logo__text" data-bind="logo">YOUR_NAME.EXE</span>
+      </a>
+      <span class="titlebar__path" aria-hidden="true">C:\PORTFOLIO\INDEX.HTM</span>
+      <div class="wincontrols" aria-hidden="true">
+        <span title="Minimize (decorative)">_</span>
+        <span title="Maximize (decorative)">&#9633;</span>
+        <span title="Close (decorative)">X</span>
+      </div>
+    </div>
+
+    <nav class="menubar" aria-label="Main navigation">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button type="button" id="fx-toggle" class="fx-toggle" aria-pressed="true">FX: ON</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HOME ============ -->
+    <section id="home" class="hero" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div class="hero__main">
+          <p class="prompt" aria-hidden="true">C:\&gt; run intro.exe</p>
+
+          <h1 id="hero-title" class="hello">
+            <span class="sr-only" id="hero-sr"></span>
+            <span id="t-hello" aria-hidden="true"></span>
+          </h1>
+
+          <p class="hero__name" aria-hidden="true"><span id="t-name"></span></p>
+          <p class="hero__sub" aria-hidden="true"><span id="t-sub"></span></p>
+          <p class="hero__intro" aria-hidden="true"><span id="t-intro"></span></p>
+          <p class="sr-only" id="hero-sr-text"></p>
+
+          <div class="hero__actions">
+            <a class="btn btn--solid" href="#projects">[ VIEW PROJECTS ]</a>
+            <a class="btn" href="#contact">[ CONTACT ME ]</a>
+          </div>
+        </div>
+
+        <aside class="win sysinfo" aria-label="System information">
+          <div class="win__bar"><span class="win__title">SYSINFO.SYS</span><span class="win__ctl" aria-hidden="true">_ &#9633; X</span></div>
+          <div class="win__body">
+            <dl class="kv" id="sysinfo-list"></dl>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="container">
+        <h2 id="about-title" class="sec-title">About Me</h2>
+        <p class="sec-lead">Everything here is editable in content.js.</p>
+
+        <div class="win">
+          <div class="win__bar"><span class="win__title">ABOUT.TXT</span><span class="win__ctl" aria-hidden="true">_ &#9633; X</span></div>
+          <div class="win__body" id="about-body"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" class="section" aria-labelledby="skills-title">
+      <div class="container">
+        <h2 id="skills-title" class="sec-title">Skills</h2>
+        <p class="sec-lead">Sample values. Replace them with your own honest levels in content.js.</p>
+        <div class="skills-grid" id="skills-grid"></div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <div class="container">
+        <h2 id="projects-title" class="sec-title">Projects</h2>
+        <p class="prompt prompt--block" aria-hidden="true">C:\PROJECTS&gt; dir</p>
+        <p class="sec-lead">Sample entries. Select "View details" on a card to open it.</p>
+        <div class="project-grid" id="project-grid"></div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE & ACHIEVEMENTS ============ -->
+    <section id="experience" class="section" aria-labelledby="experience-title">
+      <div class="container">
+        <h2 id="experience-title" class="sec-title">Experience &amp; Achievements</h2>
+        <p class="sec-lead">Placeholder entries only. Add your real education, workshops, hackathons and certificates.</p>
+        <div class="win">
+          <div class="win__bar"><span class="win__title">LOG\TIMELINE.LOG</span><span class="win__ctl" aria-hidden="true">_ &#9633; X</span></div>
+          <div class="win__body">
+            <ol class="log" id="timeline"></ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title" class="sec-title">Contact</h2>
+        <p class="sec-lead">Replace the placeholder details with your own.</p>
+
+        <div class="contact-grid">
+          <div class="win">
+            <div class="win__bar"><span class="win__title">ADDRESS.BOOK</span><span class="win__ctl" aria-hidden="true">_ &#9633; X</span></div>
+            <div class="win__body">
+              <ul class="contact-list" id="contact-list"></ul>
+              <p class="contact-cta"><a class="btn btn--solid" id="mailto-link" href="mailto:you@example.com">[ SEND EMAIL ]</a></p>
+            </div>
+          </div>
+
+          <div class="win">
+            <div class="win__bar"><span class="win__title">COMPOSE.EXE</span><span class="win__ctl" aria-hidden="true">_ &#9633; X</span></div>
+            <div class="win__body">
+              <form id="contact-form" class="form" aria-describedby="form-note">
+                <p id="form-note" class="form__note">
+                  This page has no server. Submitting opens your own email app with the message filled in; nothing is sent from this site.
+                </p>
+                <div class="field">
+                  <label for="f-name">Name&gt;</label>
+                  <input id="f-name" name="name" type="text" autocomplete="name" required>
+                </div>
+                <div class="field">
+                  <label for="f-email">Your email&gt;</label>
+                  <input id="f-email" name="email" type="email" autocomplete="email" required>
+                </div>
+                <div class="field">
+                  <label for="f-message">Message&gt;</label>
+                  <textarea id="f-message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn--solid">[ OPEN IN EMAIL APP ]</button>
+                <p id="form-status" class="form__status" role="status" aria-live="polite"></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="foot">
+    <div class="container foot__grid">
+      <p class="foot__status">SYS: ONLINE | MEM: 640K OK | UPTIME: <span id="uptime">00:00:00</span></p>
+      <p class="foot__copy">&copy; <span id="year"></span> <span data-bind="name">YOUR NAME</span>. Built with HTML, CSS and JavaScript.</p>
+      <p class="foot__actions">
+        <a href="#home">[ BACK TO TOP ]</a>
+        <button type="button" id="reboot" class="linklike">[ REBOOT ]</button>
+      </p>
+      <p class="foot__bye"><span aria-hidden="true">C:\&gt; </span>shutdown /thanks<br>It is now safe to turn off your computer.</p>
+    </div>
+  </footer>
+
+  <script src="content.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
